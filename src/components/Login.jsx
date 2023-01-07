@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import { Fragment } from "react";
 import {
   StyleSheet,
@@ -8,6 +7,8 @@ import {
   Image,
   TouchableWithoutFeedback,
   Alert,
+  Platform,
+  StatusBar,
 } from "react-native";
 import { Textp, UselessTextInput } from "../practice-Components/Textp";
 
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     backgroundColor: "#006064",
     justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.height : 0,
   },
   loginImage: {
     width: 120,
